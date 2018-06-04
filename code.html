@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miyosoraの小さい部屋</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
+
+
+	<style>
+	#id_footer { 
+    height: 40px;   
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+	}
+    img {
+    max-width: 100%;
+    height: auto;
+    }
+    .ui-dialog-contain {
+	width: 92.5%;
+	max-width: 500px;
+	margin: 10% auto 15px auto;
+	padding: 0;
+	position: relative;
+	top: -15px;
+    }
+	</style>
+	
+	</head>
+	<body>
+    
+    <div data-role="page" id="pageone">
+
+    <div id="sitebody" data-role="header" role="banner" class="ui-header ui-bar-inherit">
+        <div><a>　</a>
+            <a href="../index.html" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow" style=" size=6;face= DFKai-sb;"　 data-ajax="false"><font >首  頁</font></a>
+            <a href="#myPanel" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow" style=" size=6;face= DFKai-sb;"　 data-ajax="false"><font >選　單</font></a>
+        </div>
+    <img src='0102A.jpg'></img>
+    </div>
+    <div>
+          
+        <div id="content">
+        
+            <div data-role="panel" id="myPanel" data-display="overlay" data-position="right"> 
+                <div>
+                    <h2><a class="ui-btn ui-corner-all">總目錄</a></h2>
+                    
+                        <div data-role="main" class="ui-content">
+                            <div data-role="collapsibleset">
+                            <div data-role="collapsible">
+                                <h3>作品集</h3>
+                                    <a href="blog.html" class="ui-btn ui-corner-all" data-ajax="false">b l o g</a>
+                                    <a href="code.html" class="ui-btn ui-corner-all"  data-ajax="false">程 式 設 計</a>
+                                    <a href="model.html" class="ui-btn ui-corner-all"  data-ajax="false">模 型 製 作</a>
+                            </div>
+                            <div data-role="collapsible">
+                                <h3>攝影照片</h3>
+                                    <a href="dollrs.html" class="ui-btn ui-corner-all"  data-ajax="false">人 偶 "Dollrs"</a>
+                            </div>
+                            </div>
+                        </div>
+                        <div data-role="main" class="ui-content">
+
+                            <a href="#pageone" data-rel="close" class="ui-btn ui-corner-all">CLose</a>
+                        </div>
+                </div> 
+                    
+                <div>
+                    <img src='0103A.jpg'></img>
+                </div>
+            </div>
+        
+        <div>
+            
+            <div data-role="main" class="ui-content" style="width: 100%; max-width:320px;margin:0px auto;">
+
+                <ul data-role="listview" data-inset="true" >
+                    <li data-role="divider "class="ui-btn ui-btn-b" >程式碼</li>
+                    <li>
+                        <a href="#codeirc"  class="ui-btn ui-btn-a ui-btn-inline ui-corner-all ui-shadow ">
+                        <h2>IRC BOT</h2>
+                            <p>詳細請點擊</p>
+                            </a>
+
+                    </li>
+                    <li>
+                        <a href="#codedis"  class="ui-btn ui-btn-a ui-btn-inline ui-corner-all ui-shadow ">
+                        <h2>Discord bot</h2>
+                            <p>此BOT功能還沒完整 只有簡單指令</p>
+                            <p>預計有空閒的時候 會將IRCBOT 功能增加至此BOT上</p>
+                            </a>
+
+                    </li>
+                    <li>
+                        <a href="#"  class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow ">
+                        <h2>LINE BOT</h2>
+                            <p>LINE BOT</p>
+                            <p>目前編寫當中</p>
+                            <p>功能規畫中</p>
+                            </a>
+
+                    </li>
+                </ul>
+                
+            </div>
+            
+                
+            
+        </div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h2>Miyosoraの小さい部屋</h2>
+    </div>
+    
+</div>
+
+    <div data-role="page" data-dialog.ui-dialog-contain="true" id="codeirc"  style="width: 100%;">
+                    <div data-role="header" >
+                    <a href="#pageone" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow " 　>BACK</a>
+                        <h1>IRC BOT</h1>
+                            <div>
+                                <p>IRC 網路客戶端之一  </p>
+                                <p>  <a href="https://kiwiirc.com/client/irc.rizon.net/#Reanati">https://kiwiirc.com/client/irc.rizon.net/#Reanati</a>     </p>
+                                <p>這個BOT 正在裡面的頻道運行中</p>
+                                <p>進入網址 打上NICK 就可以使用IRC了 </p>
+                            </div>
+                    </div>
+
+                    <div data-role="main" class="ui-content" >
+                        <script src="https://gist.github.com/Miyosora/82119aabda4a4c7d2dd96d332acec4ba.js"></script>
+
+                    </div>
+
+
+    </div>
+    <div data-role="page" data-dialog.ui-dialog-contain="true" id="codedis"  style="width: 100%;">
+                    <div data-role="header" >
+                    <a href="#pageone" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow " 　>BACK</a>
+                        <h1>discord BOT</h1>
+                        
+                    </div>
+
+                    <div data-role="main" class="ui-content" >
+                        <script src="https://gist.github.com/Miyosora/edcf3503174818eebc40c246abff1fe5.js"></script>
+
+                    </div>
+
+
+    </div> 
+
+</body>
+</html>
+
+
