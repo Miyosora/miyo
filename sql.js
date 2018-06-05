@@ -19,13 +19,34 @@ conn.connect(
     else
     {
        console.log("Connection established.");
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
          queryDatabase();
     }   
 });
 
 function queryDatabase(){
-
-
-
-
+conn.end();
+console.log("end");
 };

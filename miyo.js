@@ -34,6 +34,7 @@ http.listen(port, function() {
         app.get('/blog.html', function(req, res, next){
             res.sendfile('blog.html');
         });
+
         app.get('/model.html', function(req, res, next){
             res.sendfile('model.html');
         });
