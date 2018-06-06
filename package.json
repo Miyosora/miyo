@@ -1,16 +1,18 @@
 {
   "name": "miyo",
   "version": "1.0.0",
+  "description": "",
   "main": "miyo.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "multer": "^1.3.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.3",
-    "mysql": "^2.15.0"
-  },
-  "devDependencies": {},
-  "description": ""
+  "license": "ISC"
 }
