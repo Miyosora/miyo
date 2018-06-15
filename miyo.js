@@ -68,9 +68,7 @@ http.listen(port, function() {
             res.sendfile('index.html');
         });
         app.get('/blog.html', function(req, res, next){
-            
             res.sendfile('blog.html');
-            
         });
         app.get('/model.html', function(req, res, next){
             res.sendfile('model.html');
@@ -81,7 +79,9 @@ http.listen(port, function() {
         app.get('/code.html', function(req, res, next){
             res.sendfile('code.html');
         });
-        
+        app.get('/sql.js', function(req, res, next){
+            res.sendfile('sql.js');
+        });
         
         
 
@@ -130,6 +130,7 @@ http.listen(port, function() {
                             conn.end(function(err) {
                             
                             });
+                            res.sendfile('blog.html');
                             console.log("end");
                            }
 
