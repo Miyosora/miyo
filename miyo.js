@@ -67,8 +67,8 @@ http.listen(port, function() {
         app.get('/index.html', function(req, res, next){
             res.sendfile('index.html');
         });
-        app.get('/blog.html', function(req, res, next){
-            res.sendfile('blog.html');
+        app.get('/views/blog.ejs', function(req, res, next){
+            res.render('blog.ejs');
         });
         app.get('/model.html', function(req, res, next){
             res.sendfile('model.html');
@@ -83,12 +83,12 @@ http.listen(port, function() {
             res.sendfile('sql.js');
         });
         
-        
 
 
 
 
-        app.post('/blog.html',function (req, res, next) {
+
+        app.post('/views/blog.ejs',function (req, res, next) {
 
             console.log(req.body.username);
             console.log(req.body.password);
@@ -109,7 +109,7 @@ http.listen(port, function() {
                     {
                     if(results==""){
                         console.log(results);
-                        res.sendfile('blog.html');
+                        res.render('blog.ejs');
                         console.log("end");
                             conn.end(function(err) {
                             
@@ -130,7 +130,7 @@ http.listen(port, function() {
                             conn.end(function(err) {
                             
                             });
-                            res.sendfile('blog.html');
+                            res.render('blog.ejs');
                             console.log("end");
                            }
 
