@@ -68,7 +68,46 @@ http.listen(port, function() {
             res.sendfile('index.html');
         });
         app.get('/views/blog.ejs', function(req, res, next){
-            res.render('blog.ejs');
+
+        const conn = new mysql.createConnection(config);
+        conn.connect(
+        function (err) { 
+              if (err) { 
+              console.log("!!! Cannot connect !!! Error:");
+                        throw err;
+                        }
+                        else
+                        {
+            
+            
+            
+            
+            conn.query("select * from blog",function (err, results){
+
+            var blog = {
+                
+                results
+            }
+            res.render('blog.ejs',blog);
+            console.log("end");
+            conn.end(function(err) {
+                            
+            });
+            
+            })
+            
+            }
+        });
+        
+
+            
+            
+            
+            
+            
+
+                        
+            
         });
         app.get('/model.html', function(req, res, next){
             res.sendfile('model.html');
@@ -86,14 +125,14 @@ http.listen(port, function() {
 
 
 
-
+        
 
         app.post('/views/blog.ejs',function (req, res, next) {
 
             console.log(req.body.username);
             console.log(req.body.password);
             console.log(req.body.txt);
-
+            
             const conn = new mysql.createConnection(config);
                     conn.connect(
                             function (err) { 
@@ -118,7 +157,7 @@ http.listen(port, function() {
                     }
                     else
                         {
-                            
+                        
                         if (err) throw err; 
                             console.log("查詢成功"+process.uptime());  
 
@@ -130,7 +169,9 @@ http.listen(port, function() {
                             conn.end(function(err) {
                             
                             });
-                            res.render('blog.ejs');
+                            
+                            res.redirect('blog.ejs');
+                            
                             console.log("end");
                            }
 
@@ -138,54 +179,21 @@ http.listen(port, function() {
                        }
                    });
                     
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
 
                    
             }
             
         }
         );
-
+        ;
 });
 
 
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
+        
+        
+        
+        
+        
+    

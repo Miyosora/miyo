@@ -86,15 +86,19 @@
                         
                 </div>
             </div>
-
-
-            <div style="float:left; width: 100%; max-width:340px;margin:10px 10px auto 10px;">
-                <a  class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-shadow" data-ajax="false" style="width: auto; max-width:340px;margin:18px 10px auto;">
-                </a>
-
+            <div data-role="main" class="ui-content" style="width: 100%; max-width:330px;">
+            <ul data-role="listview" data-inset="true" style = "margin:0px auto;">
+            <li data-role="divider "class="ui-btn ui-btn-b" >最新文章</li>
+            <% var numb = results.length; for(var num = 0; results.length > num; num++){ numb=numb-1; %>
+            <li>
+            <div style="float:left; width: 100%; max-width:320px;margin:10px 10px auto 10px;">
+            <pre><%= results[numb].txt;    %></pre>
+                <p><%= results[numb].time;  %></p>
             </div>
-                
-
+            </li>
+            <% }%>
+            </ul>
+            </div>
                 
 
 
