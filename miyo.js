@@ -12,7 +12,7 @@ function getDateTime() {
 
     var date = new Date();
 
-    var hour = date.getHours(); 
+    var hour = date.getHours() + 8; 
     hour = (hour < 10 ? "0" : "") + hour;
 
     var min  = date.getMinutes();
@@ -160,7 +160,7 @@ http.listen(port, function() {
                         {
                         
                         if (err) throw err; 
-                            console.log("查詢成功"+process.uptime());  
+                            console.log("查詢成功"+getDateTime());  
 
                             if(results[0].id>=1)
                             
