@@ -13,7 +13,7 @@ function getDateTime() {
     var date = new Date();
 
     var hour = date.getHours();
-    hour = (hour < 10 ? "0" : "") + hour;
+    hour = (hour < 10 ? "0" : "") + hour+8;
 
     var min  = date.getMinutes();
     min = (min < 10 ? "0" : "") + min;
@@ -29,7 +29,7 @@ function getDateTime() {
     var day  = date.getDate();
     day = (day < 10 ? "0" : "") + day;
 
-    return year + "/" + month + "/" + day + " " + hour+8 + ":" + min + ":" + sec;
+    return year + "/" + month + "/" + day + " " + hour + ":" + min + ":" + sec;
 
 }
 
