@@ -131,6 +131,7 @@ http.listen(port, function() {
 
             console.log(req.body.username);
             console.log(req.body.password);
+            console.log(req.body.title);
             console.log(req.body.txt);
             
             const conn = new mysql.createConnection(config);
@@ -165,7 +166,7 @@ http.listen(port, function() {
                             
                             {
                             
-                            conn.query("INSERT INTO blog (time ,txt ) VALUES ('"+getDateTime()+"','"+req.body.txt+"');");
+                            conn.query("INSERT INTO blog (time ,txt ,title) VALUES ('"+getDateTime()+"','"+req.body.txt+"','"+req.body.title+"');");
                             conn.end(function(err) {
                             
                             });

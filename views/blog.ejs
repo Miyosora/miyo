@@ -80,6 +80,7 @@
                         <form action="" method="post" data-ajax="false">
                             <input type="text" name="username" placeholder="請輸入帳號"></input>
                             <input type="password" name="password" placeholder="請輸入密碼"></input>
+                            <input type="text" name="title" placeholder="請輸入標題"></input>
                             <textarea type="text" name="txt" placeholder="內容"></textarea>
                             <input type="submit" value="送出" ></input>
                         </form>
@@ -87,17 +88,23 @@
                 </div>
             </div>
             <div data-role="main" class="ui-content" style="width: 100%; max-width:330px;">
-            <ul data-role="listview" data-inset="true" style = "margin:0px auto;">
-            <li data-role="divider "class="ui-btn ui-btn-b" >最新文章</li>
             <% var numb = results.length; for(var num = 0; results.length > num; num++){ numb=numb-1; %>
-            <li>
-            <div style="float:left; width: 100%; max-width:320px;margin:10px 10px auto 10px;">
-            <pre><%= results[numb].txt;    %></pre>
-                <p><%= results[numb].time;  %></p>
-            </div>
-            </li>
-            <% }%>
+            <ul data-role="listview" data-inset="true" style = "margin:0px auto;">
+            <li data-role="divider "class="ui-btn ui-btn-b"><%= results[numb].title%></li>
+                <li>
+                    <div style="float:left; width: 100%; max-width:320px;margin:10px 10px auto 10px;">
+                        <pre><%= results[numb].txt;    %></pre>
+                        
+                        
+
+                    </div>
+                </li>
+                <li data-role="footer">
+                        <%= results[numb].time;  %>
+                </li>
             </ul>
+            <br>
+            <% }%>
             </div>
                 
 
