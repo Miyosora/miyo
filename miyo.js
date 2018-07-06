@@ -6,7 +6,17 @@ const port = Number(process.env.PORT || 80);
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const multers = multer();
+const io = require('socket.io')(http);
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
+
+app.use(cookieParser('sessiontest'));
+app.use(session({
+		secret: 'sessiontest',//与cookieParser中的一致
+		resave: true,
+		saveUninitialized:true
+	}));
 
 function getDateTime() {
 
@@ -67,6 +77,25 @@ http.listen(port, function() {
         app.get('/index.html', function(req, res, next){
             res.sendfile('index.html');
         });
+		app.get('/views/netchat.ejs', function(req,res,next){
+			res.render('netchat.ejs')
+
+			
+		});
+		
+			io.on('connection', function(socket){
+			  console.log('a user connected');
+			  socket.on('disconnect', function(){
+				console.log('user disconnected');
+			  });
+			});
+			io.on('connection', function(socket){
+			socket.on('chat message', function(msg){
+			io.emit('chat message', msg);
+			console.log('message: ' + msg);
+			});
+
+		});
         app.get('/views/blog.ejs', function(req, res, next){
 
         const conn = new mysql.createConnection(config);
@@ -84,10 +113,15 @@ http.listen(port, function() {
             
             conn.query("select * from blog",function (err, results){
 
-            var blog = {
-                
-                results
-            }
+         
+			var blog = {
+				
+				results
+			
+			
+			};
+				
+		 
             res.render('blog.ejs',blog);
             console.log("end");
             conn.end(function(err) {
@@ -149,7 +183,7 @@ http.listen(port, function() {
                     {
                     if(results==""){
                         console.log(results);
-                        res.render('blog.ejs');
+                        res.redirect('blog.ejs');
                         console.log("end");
                             conn.end(function(err) {
                             
