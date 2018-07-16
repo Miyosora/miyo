@@ -10,11 +10,17 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 	<script>
+		var IDnick = Math.random().toString(36).substring(7);
 	  $(function () {
 		var socket = io();
 		$('form').submit(function(){
-		  socket.emit('chat message', $('#m').val());
-		  $('#m').val('');
+			if($('#m').val()==''){
+				$('#m').val('');
+			}else{
+				socket.emit('chat message',IDnick +" : "+ $('#m').val(),);
+				$('#m').val('');
+			}
+
 		  return false;
 		});
 		    socket.on('chat message', function(msg){
@@ -87,10 +93,18 @@
             </div>
         </div>
         <div>
-			<div data-role="main" class="ui-content" style="width: 100%; max-width:320px;margin:0px auto;">
+		
+			<div>
+			
+			</div>
+			<div data-role="main" class="ui-content" style="width: 100%; max-width:400px;margin:0px auto;">
             <ul id="messages" data-role="listview" data-inset="true"></ul>
 			<form action="" >
-				<input id="m" autocomplete="off" /><button>Send</button>
+				<div>
+				
+				<input id="m" autocomplete="off"><button>Send</button>
+				
+				</div>
 			</form>
 			</div>
             
