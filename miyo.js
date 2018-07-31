@@ -74,6 +74,9 @@ http.listen(port, function() {
             res.sendfile('0207.JPG');
 
         });
+        app.get('/', function(req, res, next){
+            res.redirect('index.html');
+        });
         app.get('/index.html', function(req, res, next){
             res.sendfile('index.html');
         });
