@@ -42,7 +42,7 @@ function getDateTime() {
     return year + "/" + month + "/" + day + " " + hour + ":" + min + ":" + sec;
 
 }
-
+ 
 const config ={
     host: 'miyu.mysql.database.azure.com',
     user: 'wangkte1@miyu',
